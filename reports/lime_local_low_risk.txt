@@ -1,0 +1,13 @@
+LIME explanation for low_risk (row 3567)
+Predicted probability of readmission: 0.0239
+
+  medical_specialty_Hematology <= 0.00: -0.1443
+  number_inpatient <= -0.32: -0.1190
+  medical_specialty_Surgery-Cardiovascular/Thoracic > 0.00: -0.1094
+  medical_specialty_Nephrology <= 0.00: -0.0643
+  diag_2_category_Neoplasms <= 0.00: -0.0514
+  acarbose_Steady <= 0.00: +0.0500
+  medical_specialty_SurgicalSpecialty <= 0.00: -0.0456
+  medical_specialty_Surgery-Neuro <= 0.00: -0.0443
+  medical_specialty_Pediatrics-CriticalCare <= 0.00: +0.0377
+  diag_1_category_Missing <= 0.00: +0.0204

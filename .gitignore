@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Data (raw/processed data not committed by default)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Row-level test-set extracts (de-identified but still per-patient feature
+# vectors / protected attributes -- not committed even de-identified, per
+# the Data Privacy Plan). The .joblib model files themselves ARE tracked.
+models/X_test.csv
+models/y_test.csv
+models/protected_test.csv
+
+# MLflow local tracking store (regenerate by rerunning src/modeling/train.py)
+mlflow.db
+mlruns/
+
+# OS
+.DS_Store
+
+# DVC (if enabled)
+.dvc/cache

@@ -1,0 +1,116 @@
+2026-08-23 11:02:31,645 | stage=ingest dataset=diabetic_data.csv rows=101766, columns=50
+2026-08-23 11:02:31,646 | stage=ingest dataset=IDS_mapping.csv tables=['admission_type_id']
+2026-08-23 11:02:32,016 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=192849
+2026-08-23 11:02:32,017 | stage=clean dataset=diabetic_data step=drop_fields, dropped=['weight', 'payer_code', 'max_glu_serum']
+2026-08-23 11:02:32,122 | stage=clean dataset=diabetic_data step=impute, fields=['race', 'diag_1', 'diag_2', 'diag_3']
+2026-08-23 11:02:32,124 | stage=clean dataset=diabetic_data step=drop_deceased_hospice, excluded_ids=[], rows_removed=0
+2026-08-23 11:02:32,137 | stage=clean dataset=diabetic_data step=cohort_filter, rows_before=101766, rows_after=18592
+2026-08-23 11:02:32,182 | stage=clean dataset=diabetic_data step=group_diagnosis_codes, fields=['diag_1', 'diag_2', 'diag_3']
+2026-08-23 11:02:32,188 | stage=clean dataset=diabetic_data step=binarize_target, positive_rate=0.1988
+2026-08-23 11:02:32,209 | stage=anonymize dataset=diabetic_data step=drop_identifiers, dropped=['encounter_id', 'patient_nbr']
+2026-08-23 11:02:50,125 | stage=ingest dataset=IDS_mapping.csv tables=['admission_type_id', 'discharge_disposition_id', 'admission_source_id']
+2026-08-23 11:02:54,863 | stage=ingest dataset=diabetic_data.csv rows=101766, columns=50
+2026-08-23 11:02:54,863 | stage=ingest dataset=IDS_mapping.csv tables=['admission_type_id', 'discharge_disposition_id', 'admission_source_id']
+2026-08-23 11:02:55,230 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=192849
+2026-08-23 11:02:55,231 | stage=clean dataset=diabetic_data step=drop_fields, dropped=['weight', 'payer_code', 'max_glu_serum']
+2026-08-23 11:02:55,282 | stage=clean dataset=diabetic_data step=impute, fields=['race', 'diag_1', 'diag_2', 'diag_3']
+2026-08-23 11:02:55,325 | stage=clean dataset=diabetic_data step=drop_deceased_hospice, excluded_ids=[11, 13, 14, 19, 20, 21], rows_removed=2423
+2026-08-23 11:02:55,343 | stage=clean dataset=diabetic_data step=cohort_filter, rows_before=99343, rows_after=17983
+2026-08-23 11:02:55,386 | stage=clean dataset=diabetic_data step=group_diagnosis_codes, fields=['diag_1', 'diag_2', 'diag_3']
+2026-08-23 11:02:55,391 | stage=clean dataset=diabetic_data step=binarize_target, positive_rate=0.2042
+2026-08-23 11:02:55,412 | stage=anonymize dataset=diabetic_data step=drop_identifiers, dropped=['encounter_id', 'patient_nbr']
+2026-08-23 11:03:24,324 | stage=ingest dataset=diabetic_data.csv rows=101766, columns=50
+2026-08-23 11:03:24,324 | stage=ingest dataset=IDS_mapping.csv tables=['admission_type_id', 'discharge_disposition_id', 'admission_source_id']
+2026-08-23 11:03:24,704 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=192849
+2026-08-23 11:03:24,705 | stage=clean dataset=diabetic_data step=drop_fields, dropped=['weight', 'payer_code', 'max_glu_serum']
+2026-08-23 11:03:24,764 | stage=clean dataset=diabetic_data step=impute, fields=['race', 'diag_1', 'diag_2', 'diag_3']
+2026-08-23 11:03:24,808 | stage=clean dataset=diabetic_data step=drop_deceased_hospice, excluded_ids=[11, 13, 14, 19, 20, 21], rows_removed=2423
+2026-08-23 11:03:24,827 | stage=clean dataset=diabetic_data step=cohort_filter, rows_before=99343, rows_after=17983
+2026-08-23 11:03:24,873 | stage=clean dataset=diabetic_data step=group_diagnosis_codes, fields=['diag_1', 'diag_2', 'diag_3']
+2026-08-23 11:03:24,880 | stage=clean dataset=diabetic_data step=binarize_target, positive_rate=0.2042
+2026-08-23 11:03:24,899 | stage=anonymize dataset=diabetic_data step=drop_identifiers, dropped=['encounter_id', 'patient_nbr']
+2026-08-23 11:03:40,785 | stage=ingest dataset=diabetic_data.csv rows=101766, columns=50
+2026-08-23 11:03:40,786 | stage=ingest dataset=IDS_mapping.csv tables=['admission_type_id', 'discharge_disposition_id', 'admission_source_id']
+2026-08-23 11:03:41,160 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=192849
+2026-08-23 11:03:41,161 | stage=clean dataset=diabetic_data step=drop_fields, dropped=['weight', 'payer_code', 'max_glu_serum']
+2026-08-23 11:03:41,214 | stage=clean dataset=diabetic_data step=impute, fields=['race', 'diag_1', 'diag_2', 'diag_3']
+2026-08-23 11:03:41,260 | stage=clean dataset=diabetic_data step=drop_deceased_hospice, excluded_ids=[11, 13, 14, 19, 20, 21], rows_removed=2423
+2026-08-23 11:03:41,279 | stage=clean dataset=diabetic_data step=cohort_filter, rows_before=99343, rows_after=17983
+2026-08-23 11:03:41,322 | stage=clean dataset=diabetic_data step=group_diagnosis_codes, fields=['diag_1', 'diag_2', 'diag_3']
+2026-08-23 11:03:41,328 | stage=clean dataset=diabetic_data step=binarize_target, positive_rate=0.2042
+2026-08-23 11:03:41,348 | stage=anonymize dataset=diabetic_data step=drop_identifiers, dropped=['encounter_id', 'patient_nbr']
+2026-08-23 11:03:41,495 | stage=transform dataset=cleaned_cohort.csv rows=17983, columns=50, output_path=/home/claude/work/capstone-diabetic-readmission/data/processed/cleaned_cohort.csv
+2026-08-23 11:06:20,889 | stage=ingest dataset=diabetic_data.csv rows=101766, columns=50
+2026-08-23 11:06:20,900 | stage=ingest dataset=IDS_mapping.csv tables=['admission_type_id', 'discharge_disposition_id', 'admission_source_id']
+2026-08-23 11:06:21,866 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=192849
+2026-08-23 11:06:21,868 | stage=clean dataset=diabetic_data step=drop_fields, dropped=['weight', 'payer_code', 'max_glu_serum']
+2026-08-23 11:06:21,987 | stage=clean dataset=diabetic_data step=impute, fields=['race', 'diag_1', 'diag_2', 'diag_3']
+2026-08-23 11:06:22,055 | stage=clean dataset=diabetic_data step=drop_deceased_hospice, excluded_ids=[11, 13, 14, 19, 20, 21], rows_removed=2423
+2026-08-23 11:06:22,074 | stage=clean dataset=diabetic_data step=cohort_filter, rows_before=99343, rows_after=17983
+2026-08-23 11:06:22,118 | stage=clean dataset=diabetic_data step=group_diagnosis_codes, fields=['diag_1', 'diag_2', 'diag_3']
+2026-08-23 11:06:22,125 | stage=clean dataset=diabetic_data step=binarize_target, positive_rate=0.2042
+2026-08-23 11:06:22,219 | stage=anonymize dataset=diabetic_data step=drop_identifiers, dropped=['encounter_id', 'patient_nbr']
+2026-08-23 11:06:44,220 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=20
+2026-08-23 11:06:44,223 | stage=clean dataset=diabetic_data step=drop_fields, dropped=['weight', 'payer_code', 'max_glu_serum']
+2026-08-23 11:06:44,226 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=20
+2026-08-23 11:06:44,227 | stage=clean dataset=diabetic_data step=impute, fields=['race', 'diag_1', 'diag_2', 'diag_3']
+2026-08-23 11:06:44,229 | stage=clean dataset=diabetic_data step=cohort_filter, rows_before=4, rows_after=2
+2026-08-23 11:06:44,234 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=20
+2026-08-23 11:06:44,234 | stage=clean dataset=diabetic_data step=impute, fields=['race', 'diag_1', 'diag_2', 'diag_3']
+2026-08-23 11:06:44,235 | stage=clean dataset=diabetic_data step=group_diagnosis_codes, fields=['diag_1', 'diag_2', 'diag_3']
+2026-08-23 11:06:44,238 | stage=clean dataset=diabetic_data step=binarize_target, positive_rate=0.5
+2026-08-23 11:06:44,239 | stage=anonymize dataset=diabetic_data step=drop_identifiers, dropped=['encounter_id', 'patient_nbr']
+2026-08-23 11:06:52,294 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=20
+2026-08-23 11:06:52,296 | stage=clean dataset=diabetic_data step=drop_fields, dropped=['weight', 'payer_code', 'max_glu_serum']
+2026-08-23 11:06:52,299 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=20
+2026-08-23 11:06:52,299 | stage=clean dataset=diabetic_data step=impute, fields=['race', 'diag_1', 'diag_2', 'diag_3']
+2026-08-23 11:06:52,302 | stage=clean dataset=diabetic_data step=cohort_filter, rows_before=4, rows_after=2
+2026-08-23 11:06:52,307 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=20
+2026-08-23 11:06:52,307 | stage=clean dataset=diabetic_data step=impute, fields=['race', 'diag_1', 'diag_2', 'diag_3']
+2026-08-23 11:06:52,308 | stage=clean dataset=diabetic_data step=group_diagnosis_codes, fields=['diag_1', 'diag_2', 'diag_3']
+2026-08-23 11:06:52,311 | stage=clean dataset=diabetic_data step=binarize_target, positive_rate=0.5
+2026-08-23 11:06:52,313 | stage=anonymize dataset=diabetic_data step=drop_identifiers, dropped=['encounter_id', 'patient_nbr']
+2026-08-23 11:06:52,318 | stage=anonymize dataset=reporting_table step=k_anonymity_suppression, k=5, rows_suppressed=1, rows_total=2
+2026-08-23 16:03:48,934 | stage=ingest dataset=diabetic_data.csv rows=101766, columns=50
+2026-08-23 16:03:48,948 | stage=ingest dataset=IDS_mapping.csv tables=['admission_type_id', 'discharge_disposition_id', 'admission_source_id']
+2026-08-23 16:03:49,858 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=192849
+2026-08-23 16:03:49,861 | stage=clean dataset=diabetic_data step=drop_fields, dropped=['weight', 'payer_code', 'max_glu_serum']
+2026-08-23 16:03:50,017 | stage=clean dataset=diabetic_data step=impute, fields=['race', 'diag_1', 'diag_2', 'diag_3', 'medical_specialty', 'A1Cresult']
+2026-08-23 16:03:50,107 | stage=clean dataset=diabetic_data step=drop_deceased_hospice, excluded_ids=[11, 13, 14, 19, 20, 21], rows_removed=2423
+2026-08-23 16:03:50,132 | stage=clean dataset=diabetic_data step=cohort_filter, rows_before=99343, rows_after=17983
+2026-08-23 16:03:50,177 | stage=clean dataset=diabetic_data step=group_diagnosis_codes, fields=['diag_1', 'diag_2', 'diag_3']
+2026-08-23 16:03:50,187 | stage=clean dataset=diabetic_data step=binarize_target, positive_rate=0.2042
+2026-08-23 16:03:50,291 | stage=anonymize dataset=diabetic_data step=drop_identifiers, dropped=['encounter_id', 'patient_nbr']
+2026-08-23 16:03:56,770 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=20
+2026-08-23 16:03:56,773 | stage=clean dataset=diabetic_data step=drop_fields, dropped=['weight', 'payer_code', 'max_glu_serum']
+2026-08-23 16:03:56,776 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=20
+2026-08-23 16:03:56,776 | stage=clean dataset=diabetic_data step=impute, fields=['race', 'diag_1', 'diag_2', 'diag_3', 'medical_specialty', 'A1Cresult']
+2026-08-23 16:03:56,779 | stage=clean dataset=diabetic_data step=cohort_filter, rows_before=4, rows_after=2
+2026-08-23 16:03:56,784 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=20
+2026-08-23 16:03:56,784 | stage=clean dataset=diabetic_data step=impute, fields=['race', 'diag_1', 'diag_2', 'diag_3', 'medical_specialty', 'A1Cresult']
+2026-08-23 16:03:56,785 | stage=clean dataset=diabetic_data step=group_diagnosis_codes, fields=['diag_1', 'diag_2', 'diag_3']
+2026-08-23 16:03:56,788 | stage=clean dataset=diabetic_data step=binarize_target, positive_rate=0.5
+2026-08-23 16:03:56,790 | stage=anonymize dataset=diabetic_data step=drop_identifiers, dropped=['encounter_id', 'patient_nbr']
+2026-08-23 16:03:56,796 | stage=anonymize dataset=reporting_table step=k_anonymity_suppression, k=5, rows_suppressed=1, rows_total=2
+2026-08-28 21:05:35,208 | stage=ingest dataset=diabetic_data.csv rows=101766, columns=50
+2026-08-28 21:05:35,209 | stage=ingest dataset=IDS_mapping.csv tables=['admission_type_id', 'discharge_disposition_id', 'admission_source_id']
+2026-08-28 21:05:35,586 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=192849
+2026-08-28 21:05:35,588 | stage=clean dataset=diabetic_data step=drop_fields, dropped=['weight', 'payer_code', 'max_glu_serum']
+2026-08-28 21:05:35,848 | stage=clean dataset=diabetic_data step=impute, fields=['race', 'diag_1', 'diag_2', 'diag_3', 'medical_specialty', 'A1Cresult']
+2026-08-28 21:05:35,958 | stage=clean dataset=diabetic_data step=drop_deceased_hospice, excluded_ids=[11, 13, 14, 19, 20, 21], rows_removed=2423
+2026-08-28 21:05:35,982 | stage=clean dataset=diabetic_data step=cohort_filter, rows_before=99343, rows_after=17983
+2026-08-28 21:05:36,028 | stage=clean dataset=diabetic_data step=group_diagnosis_codes, fields=['diag_1', 'diag_2', 'diag_3']
+2026-08-28 21:05:36,035 | stage=clean dataset=diabetic_data step=binarize_target, positive_rate=0.2042
+2026-08-28 21:05:36,058 | stage=anonymize dataset=diabetic_data step=drop_identifiers, dropped=['encounter_id', 'patient_nbr']
+2026-08-28 21:05:36,206 | stage=transform dataset=cleaned_cohort.csv rows=17983, columns=50, output_path=/home/claude/work/capstone-diabetic-readmission/data/processed/cleaned_cohort.csv
+2026-09-01 03:09:21,385 | stage=ingest dataset=diabetic_data.csv rows=101766, columns=50
+2026-09-01 03:09:21,459 | stage=ingest dataset=IDS_mapping.csv tables=['admission_type_id', 'discharge_disposition_id', 'admission_source_id']
+2026-09-01 03:09:21,869 | stage=clean dataset=diabetic_data step=recode_missing, cells_recoded=192849
+2026-09-01 03:09:21,907 | stage=clean dataset=diabetic_data step=drop_fields, dropped=['weight', 'payer_code', 'max_glu_serum']
+2026-09-01 03:09:21,970 | stage=clean dataset=diabetic_data step=impute, fields=['race', 'diag_1', 'diag_2', 'diag_3', 'medical_specialty', 'A1Cresult']
+2026-09-01 03:09:22,019 | stage=clean dataset=diabetic_data step=drop_deceased_hospice, excluded_ids=[11, 13, 14, 19, 20, 21], rows_removed=2423
+2026-09-01 03:09:22,054 | stage=clean dataset=diabetic_data step=cohort_filter, rows_before=99343, rows_after=17983
+2026-09-01 03:09:22,110 | stage=clean dataset=diabetic_data step=group_diagnosis_codes, fields=['diag_1', 'diag_2', 'diag_3']
+2026-09-01 03:09:22,125 | stage=clean dataset=diabetic_data step=binarize_target, positive_rate=0.2042
+2026-09-01 03:09:22,152 | stage=anonymize dataset=diabetic_data step=drop_identifiers, dropped=['encounter_id', 'patient_nbr']
+2026-09-01 03:09:22,299 | stage=transform dataset=cleaned_cohort.csv rows=17983, columns=50, output_path=/home/claude/work/capstone-diabetic-readmission/data/processed/cleaned_cohort.csv

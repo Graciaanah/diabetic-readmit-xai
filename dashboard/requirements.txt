@@ -1,0 +1,15 @@
+# Minimal dependencies for dashboard/app.py, for faster/more reliable
+# Streamlit Cloud deployment than the full repo requirements.txt (which
+# includes MLflow, Great Expectations, Prefect, etc. that the dashboard
+# itself never imports).
+#
+# Use this file in Streamlit Cloud's "Advanced settings" if the default
+# root requirements.txt is slow or fails to install; otherwise the root
+# file works too, just installs more than this app strictly needs.
+streamlit==1.38.0
+pandas==2.2.3
+numpy==1.26.4
+plotly==5.24.1
+joblib==1.6.0
+scikit-learn==1.5.2
+xgboost==2.1.1

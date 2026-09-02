@@ -1,0 +1,3 @@
+Confusion matrix for logistic_regression:
+[[2879   22]
+ [ 722   28]]

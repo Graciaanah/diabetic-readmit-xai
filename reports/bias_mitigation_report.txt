@@ -1,0 +1,45 @@
+Bias Mitigation Report -- ThresholdOptimizer (attribute: race)
+================================================================================
+
+BEFORE mitigation (top-20% shortlist decision, original model):
+{'label': 'before_mitigation', 'demographic_parity_difference': np.float64(0.3182), 'demographic_parity_ratio': np.float64(0.0), 'equalized_odds_difference': 0.6, 'overall_recall': np.float64(0.3227), 'accuracy': 0.7267}
+                selection_rate    recall count
+race                                          
+AfricanAmerican       0.240385  0.389474   416
+Asian                      0.0       0.0     8
+Caucasian             0.187879  0.292308  1320
+Hispanic              0.190476  0.363636    42
+Other                 0.318182       0.6    22
+Unknown               0.166667  0.333333    18
+
+AFTER mitigation -- constraint: demographic_parity
+{'label': 'after_mitigation_demographic_parity', 'demographic_parity_difference': np.float64(0.0238), 'demographic_parity_ratio': np.float64(0.0), 'equalized_odds_difference': 0.0909, 'overall_recall': np.float64(0.0507), 'accuracy': 0.7968}
+                selection_rate    recall count
+race                                          
+AfricanAmerican       0.021635  0.052632   416
+Asian                      0.0       0.0     8
+Caucasian             0.018182      0.05  1320
+Hispanic               0.02381  0.090909    42
+Other                      0.0       0.0    22
+Unknown                    0.0       0.0    18
+
+AFTER mitigation -- constraint: equalized_odds
+{'label': 'after_mitigation_equalized_odds', 'demographic_parity_difference': np.float64(0.0), 'demographic_parity_ratio': np.float64(nan), 'equalized_odds_difference': 0.0, 'overall_recall': np.float64(0.0), 'accuracy': 0.7946}
+                selection_rate recall count
+race                                       
+AfricanAmerican            0.0    0.0   416
+Asian                      0.0    0.0     8
+Caucasian                  0.0    0.0  1320
+Hispanic                   0.0    0.0    42
+Other                      0.0    0.0    22
+Unknown                    0.0    0.0    18
+
+================================================================================
+COMPARISON & INTERPRETATION
+================================================================================
+
+demographic_parity constraint: DP difference 0.3182 -> 0.0238, but overall recall collapsed 0.3227 -> 0.0507 (accuracy 0.7267 -> 0.7968). Demographic parity forces equal SELECTION rates across groups, not equal ability to correctly identify true positives -- a poor fit for a health-outreach tool whose entire purpose is recall.
+
+equalized_odds constraint: an even more severe finding. DP difference 0.3182 -> 0.0 and equalized odds difference 0.6 -> 0.0 both hit zero -- but only because ThresholdOptimizer collapsed to the trivial all-negative solution (0% selection rate and 0% recall for every group, including the majority group). A model that flags no one is perfectly 'fair' by both metrics and clinically useless. This is a real failure mode, not a success: with small per-group calibration samples (the calibration half has as few as n=8 for Asian, n=18 for Unknown), ThresholdOptimizer's per-group threshold fitting is unstable enough that the degenerate zero-selection point becomes the easiest feasible solution to the equality constraint.
+
+Recommendation: neither post-processing constraint tested here is fit to deploy as-is. Two better paths forward: (1) coarsen the race grouping before mitigation (the current 6-category split leaves several subgroups too small for stable per-group threshold calibration), or (2) use an in-processing technique such as Fairlearn's ExponentiatedGradient, which optimizes the fairness-constrained objective jointly with the classifier rather than adjusting thresholds after the fact on a small calibration split. Both mitigation attempts are reported here in full -- including the failure -- because an honest fairness analysis has to show when a mitigation technique doesn't work, not just when it does.

@@ -1,0 +1,35 @@
+Sensitivity Analysis Report
+============================================================
+
+Mean absolute change in predicted readmission risk when each
+feature is perturbed by +/- 0.5 and +/- 1.0 standard deviations
+(evaluated on a random 200-patient sample of the test set):
+
+           feature  delta  mean_abs_risk_change  mean_signed_risk_change
+  number_inpatient   -1.0                0.0511                  -0.0496
+  number_inpatient   -0.5                0.0272                  -0.0263
+  number_inpatient    0.5                0.0000                   0.0000
+  number_inpatient    1.0                0.0294                   0.0284
+  time_in_hospital   -1.0                0.0136                  -0.0054
+  time_in_hospital   -0.5                0.0097                  -0.0034
+  time_in_hospital    0.5                0.0080                   0.0015
+  time_in_hospital    1.0                0.0121                  -0.0008
+   num_medications   -1.0                0.0205                  -0.0056
+   num_medications   -0.5                0.0094                  -0.0008
+   num_medications    0.5                0.0033                   0.0004
+   num_medications    1.0                0.0079                   0.0000
+num_lab_procedures   -1.0                0.0080                   0.0001
+num_lab_procedures   -0.5                0.0056                  -0.0003
+num_lab_procedures    0.5                0.0059                   0.0004
+num_lab_procedures    1.0                0.0098                   0.0017
+
+
+Features ranked by average sensitivity:
+feature
+number_inpatient      0.026925
+time_in_hospital      0.010850
+num_medications       0.010275
+num_lab_procedures    0.007325
+
+
+Interpretation: number_inpatient is the most sensitive input -- consistent with it being the dominant SHAP feature -- meaning small data-entry errors or missing-data imputation artifacts in this field have an outsized effect on predicted risk and warrant extra data-quality attention in any production deployment.

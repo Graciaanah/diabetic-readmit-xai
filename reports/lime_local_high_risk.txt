@@ -1,0 +1,13 @@
+LIME explanation for high_risk (row 1861)
+Predicted probability of readmission: 0.7716
+
+  number_inpatient > 0.22: +0.1570
+  medical_specialty_Surgery-Cardiovascular/Thoracic <= 0.00: +0.1228
+  nateglinide_Up <= 0.00: -0.1168
+  medical_specialty_Hematology <= 0.00: -0.1018
+  medical_specialty_InfectiousDiseases <= 0.00: -0.0640
+  acarbose_Steady <= 0.00: +0.0628
+  medical_specialty_Surgery-Neuro <= 0.00: -0.0546
+  medical_specialty_Nephrology <= 0.00: -0.0542
+  diag_2_category_Missing <= 0.00: -0.0514
+  medical_specialty_Psychiatry-Child/Adolescent <= 0.00: +0.0246
