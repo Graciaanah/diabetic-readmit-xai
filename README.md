@@ -69,8 +69,8 @@ docker run -v $(pwd)/data:/app/data diabetic-readmission-pipeline
 | Module 2 | Planning, architecture, RAID log, sprint board | ✅ Complete |
 | Module 3 | Data pipeline: ingestion, cleaning, validation, bias detection, governance | ✅ Complete |
 | Module 4 | Predictive modeling, MLflow tracking, SHAP/LIME/counterfactuals, fairness audit, bias mitigation, FastAPI | ✅ Complete |
-| Module 5 | Stakeholder presentation and dashboard | ⏳ Upcoming |
-| Final Project | Full integration and deployment | ⏳ Upcoming |
+| Module 5 | Stakeholder presentation and dashboard | ✅ Complete |
+| Final Project | Full integration and deployment | ✅ Complete |
 
 ## Key Documents
 
