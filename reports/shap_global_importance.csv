@@ -1,0 +1,11 @@
+feature,mean_abs_shap
+number_inpatient,0.26003373
+discharge_disposition_id,0.05382602
+time_in_hospital,0.04831912
+num_medications,0.030663637
+number_emergency,0.028634641
+num_lab_procedures,0.027122047
+A1Cresult_Not Tested,0.0268771
+diag_1_category_Diabetes,0.025618047
+admission_type_id,0.020296827
+metformin_No,0.017069926

@@ -1,0 +1,4 @@
+attribute,demographic_parity_difference,demographic_parity_ratio,equalized_odds_difference,min_disparate_impact_ratio,flag_disparate_impact_below_0.8
+race,0.32,0.0,0.5556,0.0,True
+gender,0.0086,0.958,0.0489,0.958,False
+age,0.3882,0.0,0.5556,0.3686,True

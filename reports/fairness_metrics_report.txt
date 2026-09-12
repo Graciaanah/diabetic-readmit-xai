@@ -1,0 +1,75 @@
+Fairness Metrics Report
+============================================================
+
+Model audited: xgboost
+Test set size: 3651
+k-anonymity suppression threshold: 5
+
+PRIMARY decision rule: top-20% risk-ranked shortlist (threshold=0.2400), matching the deployed tool's actual capacity-constrained follow-up list, not a raw 0.5 cutoff.
+
+--- race (shortlist decision) ---
+Demographic Parity Difference: 0.32
+Demographic Parity Ratio: 0.0
+Equalized Odds Difference: 0.5556
+Minimum Disparate Impact Ratio: 0.0
+Flagged (disparate impact < 0.8): True
+
+Per-subgroup breakdown (selection rate, TPR/recall, FPR, count):
+                 selection_rate  recall_tpr       fpr count
+race                                                       
+AfricanAmerican        0.246061    0.377143  0.210769   825
+Asian                  0.000000    0.000000  0.000000    15
+Caucasian              0.183812    0.284644  0.158294  2644
+Hispanic               0.250000    0.416667  0.187500    88
+Other                  0.320000    0.555556  0.268293    50
+Unknown                0.137931    0.200000  0.125000    29
+
+--- gender (shortlist decision) ---
+Demographic Parity Difference: 0.0086
+Demographic Parity Ratio: 0.958
+Equalized Odds Difference: 0.0489
+Minimum Disparate Impact Ratio: 0.958
+Flagged (disparate impact < 0.8): False
+
+Per-subgroup breakdown (selection rate, TPR/recall, FPR, count):
+        selection_rate  recall_tpr       fpr count
+gender                                            
+Female        0.204154    0.335013  0.171211  1974
+Male          0.195587    0.286119  0.171450  1677
+
+--- age (shortlist decision) ---
+Demographic Parity Difference: 0.3882
+Demographic Parity Ratio: 0.0
+Equalized Odds Difference: 0.5556
+Minimum Disparate Impact Ratio: 0.3686
+Flagged (disparate impact < 0.8): True
+
+Per-subgroup breakdown (selection rate, TPR/recall, FPR, count):
+          selection_rate  recall_tpr       fpr count
+age                                                 
+[0-10)               NaN         NaN       NaN    <5
+[10-20)         0.333333    0.500000  0.285714    18
+[20-30)         0.388235    0.555556  0.265306    85
+[30-40)         0.282353    0.450000  0.230769   170
+[40-50)         0.232737    0.419753  0.183871   391
+[50-60)         0.213816    0.333333  0.185336   608
+[60-70)         0.191293    0.263804  0.171429   758
+[70-80)         0.185972    0.296703  0.159420   941
+[80-90)         0.143098    0.185841  0.133056   594
+[90-100)        0.211765    0.214286  0.211268    85
+
+============================================================
+SUPPLEMENTARY: default 0.5-threshold decision (see caveat above)
+============================================================
+
+--- race (0.5 threshold) ---
+Demographic Parity Difference: 0.08
+Equalized Odds Difference: 0.3333
+
+--- gender (0.5 threshold) ---
+Demographic Parity Difference: 0.0015
+Equalized Odds Difference: 0.0139
+
+--- age (0.5 threshold) ---
+Demographic Parity Difference: 0.0294
+Equalized Odds Difference: 0.0617

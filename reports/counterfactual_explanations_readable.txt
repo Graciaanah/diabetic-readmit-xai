@@ -1,0 +1,30 @@
+Counterfactual explanations for high-risk patient (row 1861)
+Original predicted risk: 0.7716
+Actionable features allowed to vary: ['time_in_hospital', 'num_lab_procedures', 'num_procedures', 'num_medications', 'metformin_No', 'metformin_Steady', 'metformin_Up', 'insulin_No', 'insulin_Steady', 'insulin_Up', 'change_No', 'diabetesMed_Yes']
+
+Counterfactual 1 (new predicted risk: 0.4926, was 0.7716):
+    time_in_hospital: -0.894 -> 0.46
+    num_procedures: -0.052 -> 3.129
+    num_medications: 0.531 -> 3.219
+    insulin_No: 0.0 -> 1.0
+    insulin_Up: 0.0 -> 1.0
+    change_No: 0.0 -> 1.0
+
+Counterfactual 2 (new predicted risk: 0.4984, was 0.7716):
+    time_in_hospital: -0.894 -> 0.658
+    num_lab_procedures: -2.241 -> -1.828
+    num_procedures: -0.052 -> 3.309
+    num_medications: 0.531 -> 1.828
+    metformin_Steady: 1.0 -> 0.0
+    metformin_Up: 0.0 -> 1.0
+    insulin_Up: 0.0 -> 1.0
+
+Counterfactual 3 (new predicted risk: 0.4984, was 0.7716):
+    time_in_hospital: -0.894 -> 0.658
+    num_lab_procedures: -2.241 -> -1.828
+    num_procedures: -0.052 -> 3.309
+    num_medications: 0.531 -> 1.828
+    metformin_Steady: 1.0 -> 0.0
+    metformin_Up: 0.0 -> 1.0
+    insulin_Up: 0.0 -> 1.0
+    diabetesMed_Yes: 1.0 -> 0.0
